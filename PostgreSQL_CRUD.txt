@@ -1,0 +1,61 @@
+-- Create Table
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(100),
+    salary NUMERIC
+);
+
+-- Insert Data
+INSERT INTO employees (name, position, salary) VALUES
+('John Doe', 'Software Engineer', 60000),
+('Jane Smith', 'Project Manager', 75000),
+('Alice Johnson', 'Data Analyst', 55000);
+
+-- Read Data
+SELECT * FROM employees;
+
+-- Read Specific Data
+SELECT name, position FROM employees;
+
+-- Read Data with Conditions
+SELECT * FROM employees WHERE salary > 60000;
+
+-- Update Data
+UPDATE employees
+SET salary = 80000
+WHERE name = 'John Doe';
+
+-- Delete Data
+DELETE FROM employees WHERE name = 'Jane Smith';
+
+-- Delete All Data
+DELETE FROM employees;
+
+-- Add a column
+ALTER TABLE employees ADD COLUMN department VARCHAR(50);
+
+--Updating existing rows with numeric values as strings
+
+UPDATE employees
+SET salary = '12345'
+WHERE student_id = 1;
+
+UPDATE employees
+SET salary = '67890'
+WHERE student_id = 2;
+
+
+-- Remove a column
+ALTER TABLE employees DROP COLUMN department;
+
+
+
+
+
+
+
+
+
+
+
